@@ -20,5 +20,10 @@
   "homepage": "https://github.com/cgmerida/git-course#readme",
   "devDependencies": {
     "lite-server": "^2.5.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
   }
 }
