@@ -29,10 +29,49 @@
 					<li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
 					<li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
 					<li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
-                </ul>
+				</ul>
+				<span class="navbar-text">
+					<a data-toggle="modal" data-target="#loginModal">
+						<i class="fa fa-sign-in"></i> Login
+					</a>
+				</span>
             </div>
         </div>
 	</nav>
+
+	<div class="modal fade" id="loginModal" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Login Form</h4>
+					<button class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="form-inline">
+						<label class="sr-only" for="email">Email</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id="email" placeholder="Email">
+
+						<label class="sr-only" for="password">Password</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id="password" placeholder="Password">
+				
+						<div class="form-check mb-2 mr-sm-2">
+							<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+							<label class="form-check-label" for="inlineFormCheck">
+								Remember me
+							</label>
+						</div>
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary btn-sm ml-1">Sign In</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<header class="jumbotron">
 		<div class="container">
@@ -46,7 +85,10 @@
 					<img src="img/logo.png" alt="" class="img-fluid">
 				</div>
 				<div class="col-12 col-sm align-self-center">
-					<a href="#reserveform" class="btn btn-block btn-sm btn-warning">
+					<a href="#reserveform" data-toggle="tooltip" data-html="true"
+						title="call us at <br><strong>+852 12345678</strong>"
+						data-placement="bottom"
+						class="btn btn-block btn-sm btn-warning">
 						Reserve Table
 					</a>
 					<!-- <button data-target="#reserveform" class="btn btn-block btn-sm btn-warning">
@@ -221,5 +263,11 @@
 	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script>
+		$(document).ready(function (){
+			$('[data-toggle=tooltip]').tooltip();
+		});
+	</script>
 </body>
 </html>
