@@ -65,3 +65,10 @@ body {
     right: 15%;
     left: 35%;
 }
+
+#carousel-btns {
+    right: 0;
+    bottom: 0px;
+    position: absolute;
+    z-index: 10;
+}
