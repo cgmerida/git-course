@@ -66,9 +66,16 @@ body {
     left: 35%;
 }
 
-#carousel-btns {
+/* #carousel-btns {
     right: 0;
     bottom: 0px;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
+} */
+
+#carousel-btn {
+    right: 0;
+    bottom: 0px;
+    position: absolute;
+    z-index: 1;
 }
