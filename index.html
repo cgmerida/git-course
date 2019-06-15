@@ -31,7 +31,7 @@
 					<li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
 				</ul>
 				<span class="navbar-text">
-					<a data-toggle="modal" data-target="#loginModal">
+					<a id="login-btn">
 						<i class="fa fa-sign-in"></i> Login
 					</a>
 				</span>
@@ -49,25 +49,31 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="form-inline">
-						<label class="sr-only" for="email">Email</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id="email" placeholder="Email">
-
-						<label class="sr-only" for="password">Password</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id="password" placeholder="Password">
-				
-						<div class="form-check mb-2 mr-sm-2">
-							<input class="form-check-input" type="checkbox" id="inlineFormCheck">
-							<label class="form-check-label" for="inlineFormCheck">
-								Remember me
-							</label>
+					<form>
+						<div class="form-row">
+							<div class="form-group col-sm-4">
+								<label class="sr-only" for="exampleInputEmail3">Email address</label>
+								<input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+									placeholder="Enter email">
+							</div>
+							<div class="form-group col-sm-4">
+								<label class="sr-only" for="exampleInputPassword3">Password</label>
+								<input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3"
+									placeholder="Password">
+							</div>
+							<div class="col-sm-auto">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox">
+									<label class="form-check-label"> Remember me
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
 						</div>
 					</form>
-
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-					<button type="button" class="btn btn-primary btn-sm ml-1">Sign In</button>
 				</div>
 			</div>
 		</div>
@@ -87,29 +93,29 @@
 						<div class="form-group row">
 							<label for="guests" class="col-sm-2 col-form-label">Number of Guests</label>
 							<div class="col-10">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="guests" id="radio1" value="1">
-									<label class="form-check-label" for="radio1">1</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="radio1" name="guests" class="custom-control-input">
+									<label class="custom-control-label" for="radio1">1</label>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="guests" id="radio2" value="2">
-									<label class="form-check-label" for="radio2">2</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="radio2" name="guests" class="custom-control-input">
+									<label class="custom-control-label" for="radio2">2</label>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="guests" id="radio3" value="3">
-									<label class="form-check-label" for="radio3">3</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="radio3" name="guests" class="custom-control-input">
+									<label class="custom-control-label" for="radio3">3</label>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="guests" id="radio4" value="4">
-									<label class="form-check-label" for="radio4">4</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="radio4" name="guests" class="custom-control-input">
+									<label class="custom-control-label" for="radio4">4</label>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="guests" id="radio5" value="5">
-									<label class="form-check-label" for="radio5">5</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="radio5" name="guests" class="custom-control-input">
+									<label class="custom-control-label" for="radio5">5</label>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="guests" id="radio6" value="6">
-									<label class="form-check-label" for="radio6">6</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="radio6" name="guests" class="custom-control-input">
+									<label class="custom-control-label" for="radio6">6</label>
 								</div>
 							</div>
 						</div>
@@ -146,7 +152,6 @@
 							</div>
 						</div>
 					</form>
-	
 				</div>
 			</div>
 		</div>
@@ -164,7 +169,7 @@
 					<img src="img/logo.png" alt="" class="img-fluid">
 				</div>
 				<div class="col-12 col-sm align-self-center">
-					<a data-toggle="modal" data-target="#reserveModal" class="btn btn-block btn-sm btn-warning">
+					<a class="btn btn-block btn-sm btn-warning" id="reserve-btn">
 						Reserve Table
 					</a>
 					<!-- <button data-target="#reserveform" class="btn btn-block btn-sm btn-warning">
@@ -373,6 +378,14 @@
 					$(this).removeClass('btn-success').addClass('btn-danger');
 					$(this).empty().html(`<i class="fa fa-pause"></i>`);
 				}
+			});
+
+			$('#reserve-btn').click(function() {
+				$('#reserveModal').modal('show');
+			});
+			
+			$('#login-btn').click(function () {
+				$('#loginModal').modal('show');
 			});
 		});
 	</script>
