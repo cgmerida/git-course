@@ -9,7 +9,12 @@
     "lite": "lite-server",
     "scss": "node-sass -o css/ css/",
     "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
-    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* --out-dir=dist/img",
+    "usemin": "usemin contactus.html -d dist -o dist/contactus.html --htmlmin true && usemin aboutus.html -d dist -o dist/aboutus.html --htmlmin true && usemin index.html -d dist -o dist/index.html --htmlmin true",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
   },
   "repository": {
     "type": "git",
@@ -22,11 +27,16 @@
   },
   "homepage": "https://github.com/cgmerida/git-course#readme",
   "devDependencies": {
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
     "lite-server": "^2.5.3",
     "node-sass": "^4.12.0",
     "onchange": "^6.0.0",
     "parallelshell": "^3.0.2",
-    "sass": "^1.21.0"
+    "rimraf": "^2.6.3",
+    "sass": "^1.21.0",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.5.1"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

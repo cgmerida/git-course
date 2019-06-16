@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<!-- Required meta tag always come first -->
 	<meta charset="UTF-8">
@@ -7,11 +7,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
 
 	<!-- Botstrapp CSS -->
+	<!-- build:css css/main.css -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 
 	<link rel="stylesheet" href="css/styles.css">
+	<!-- endbuild -->
 
 	<title>Ristorante con Fusion</title>
 </head>
@@ -40,7 +42,7 @@
 	</nav>
 
 	<div class="modal fade" id="loginModal" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Login Form</h4>
@@ -80,7 +82,7 @@
 	</div>
 
 	<div class="modal fade" id="reserveModal" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Reserve a Table</h4>
@@ -91,7 +93,7 @@
 				<div class="modal-body">
 					<form action="#">
 						<div class="form-group row">
-							<label for="guests" class="col-sm-2 col-form-label">Number of Guests</label>
+							<label for="radio1" class="col-sm-2 col-form-label">Number of Guests</label>
 							<div class="col-10">
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="radio1" name="guests" class="custom-control-input">
@@ -124,10 +126,10 @@
 							<div class="col">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
 									<label class="btn btn-success active">
-										<input type="radio" name="section" id="none-smoking" autocomplete="off" checked> None Smoking
+										<input type="radio" name="section" id="none-smoking" checked> None Smoking
 									</label>
 									<label class="btn btn-danger">
-										<input type="radio" name="section" id="smoking" autocomplete="off"> Smoking
+										<input type="radio" name="section" id="smoking"> Smoking
 									</label>
 								</div>
 							</div>
@@ -353,9 +355,11 @@
 	</footer>
 
 	<!-- Jquery first, then Popper.js, then Bootstrap  -->
+	<!-- build:js js/main.js -->
 	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
+	<!-- endbuild -->
 </body>
 </html>
